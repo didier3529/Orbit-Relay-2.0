@@ -11,7 +11,7 @@ import {
 import { useState, useEffect } from 'react'
 import { databaseFile } from 'core'
 import { SQLocalDrizzle } from 'sqlocal/drizzle'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Footer } from './Footer'
 import { Header } from './Header'
 
