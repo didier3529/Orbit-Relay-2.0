@@ -18,6 +18,9 @@ import {
   AirdropErrorCode,
 } from "./utils/airdropError";
 
+// Import the new utility functions
+import { estimateCost, estimateCostJSON, getSendablePercentage } from "./utils/estimateCost";
+
 import { init } from "./services/init";
 import { create } from "./services/create";
 import { exist } from "./services/exist";
@@ -63,7 +66,11 @@ export {
   MICRO_LAMPORTS_PER_LAMPORT,
   databaseFile,
   getPriorityFeeEstimate, 
-  sampleTransaction, 
+  sampleTransaction,
+  // Export the new utility functions
+  estimateCost,
+  estimateCostJSON,
+  getSendablePercentage,
 };
 
 export type { Token, NodeDatabase, BrowserDatabase };
