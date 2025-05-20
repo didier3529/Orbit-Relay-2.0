@@ -5,6 +5,7 @@ import { ResumeAirdrop } from './components/ResumeAirdrop'
 import { AirdropSelection } from './components/AirdropSelection'
 import { DecompressPage } from './components/DecompressPage'
 import { CostCalculator } from './components/CostCalculator'
+// Import from core module (renamed from helius-airship-core)
 import { init, exist, databaseFile } from 'core'
 import { SQLocalDrizzle } from 'sqlocal/drizzle'
 import { drizzle } from 'drizzle-orm/sqlite-proxy'

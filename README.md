@@ -8,6 +8,7 @@ Orbit Relay is an open-source tool that makes token airdrops simple, affordable,
 - 💸 **ZK Compression**: Cut costs on large airdrops by reducing account usage. [More info](https://www.zkcompression.com/).
 - 🖥️ **Web Version**: Perfect for small airdrops, up to 200,000 recipients.
 - ⚙️ **CLI Version**: For advanced users needing larger-scale distribution.
+- 🔄 **Updated imports**: All imports now use the "core" module.
 
 ## Web Version
 
