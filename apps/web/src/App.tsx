@@ -10,6 +10,10 @@ import { init, exist, databaseFile } from 'core'
 import { SQLocalDrizzle } from 'sqlocal/drizzle'
 import { drizzle } from 'drizzle-orm/sqlite-proxy'
 import { configureDatabase } from './lib/utils'
+// Import the side dropdown components
+import { SideDropdown } from './components/ui/SideDropdown'
+import { FAQPanel } from './components/sidepanels/FAQPanel'
+import { HowItWorksPanel } from './components/sidepanels/HowItWorksPanel'
 
 const { driver, batchDriver } = new SQLocalDrizzle({
   databasePath: databaseFile,
@@ -84,6 +88,15 @@ function App() {
           />
         </Routes>
       </div>
+      
+      {/* Side Dropdowns */}
+      <SideDropdown title="FAQ" position="left">
+        <FAQPanel />
+      </SideDropdown>
+      
+      <SideDropdown title="How It Works" position="right">
+        <HowItWorksPanel />
+      </SideDropdown>
     </div>
   )
 }
