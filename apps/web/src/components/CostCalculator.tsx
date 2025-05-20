@@ -39,7 +39,7 @@ export function CostCalculator() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         jsonrpc: '2.0',
-        id: 'helius-airship',
+        id: 'orbitrelay',
         method: 'getPriorityFeeEstimate',
         params: [
           {
@@ -112,11 +112,11 @@ export function CostCalculator() {
       <Header />
       <Card className="w-full max-w-3xl">
         <CardHeader>
-          <CardTitle className="text-3xl font-bold text-primary text-center">Airdrop Calculator</CardTitle>
+          <CardTitle className="text-3xl font-bold orbit-text">Distribution Calculator</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex flex-col space-y-4 justify-center items-center">
-            <Label htmlFor="recipients">How many airdrops do you want to send?</Label>
+            <Label htmlFor="recipients">How many distributions do you want to send?</Label>
             <div className="flex gap-2 mb-2 flex-wrap justify-center">
               <Button
                 variant="outline"
@@ -158,7 +158,7 @@ export function CostCalculator() {
           <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-center">
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">ZK Compression Airdrop</CardTitle>
+                <CardTitle className="text-lg">ZK Compression Distribution</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="space-y-1">
@@ -189,7 +189,7 @@ export function CostCalculator() {
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Normal Airdrop</CardTitle>
+                <CardTitle className="text-lg">Normal Distribution</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="space-y-1">
@@ -216,9 +216,16 @@ export function CostCalculator() {
           </div>
         </CardContent>
       </Card>
-      <Link to="/" className="text-primary text-white shadow-lg hover:underline">
+      <a
+        href="#"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = '/';
+        }}
+        className="text-[#64ffda] hover:text-[#00b4d8] transition-colors duration-300 hover:underline"
+      >
         Back to Home
-      </Link>
+      </a>
     </main>
   )
 }

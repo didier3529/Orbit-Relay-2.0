@@ -15,7 +15,7 @@ const logger = createLogger({
 });
 
 if (typeof process !== "undefined" && isNode(process)) {
-  logger.add(new transports.File({ filename: "airship.log" }));
+  logger.add(new transports.File({ filename: "orbitrelay.log" }));
 } else {
   logger.add(new Console({
     silent: false,

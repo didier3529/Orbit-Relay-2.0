@@ -395,9 +395,9 @@ export default function Step2({
                 />
               </FormControl>
               {collectionAddressError && (
-                <div className="flex items-center space-x-2 text-red-500">
+                <div className="flex items-center space-x-2 orbit-alert-text">
                   <AlertCircle className="h-4 w-4" />
-                  <p className="text-sm">{collectionAddressError}</p>
+                  <p className="text-xs">{collectionAddressError}</p>
                 </div>
               )}
               <FormMessage />
@@ -424,9 +424,9 @@ export default function Step2({
                 />
               </FormControl>
               {mintAddressError && (
-                <div className="flex items-center space-x-2 text-red-500">
+                <div className="flex items-center space-x-2 orbit-alert-text">
                   <AlertCircle className="h-4 w-4" />
-                  <p className="text-sm">{mintAddressError}</p>
+                  <p className="text-xs">{mintAddressError}</p>
                 </div>
               )}
               <FormMessage />
@@ -444,7 +444,7 @@ export default function Step2({
               isDragActive
                 ? 'border-primary bg-primary/10'
                 : csvFileError
-                  ? 'border-red-50'
+                  ? 'orbit-warning-border'
                   : 'border-gray-300 hover:border-primary/50 hover:bg-primary/5'
             }`}
           >
@@ -484,9 +484,9 @@ export default function Step2({
             )}
           </div>
           {csvFileError && (
-            <div className="flex items-center space-x-2 text-red-500">
+            <div className="flex items-center space-x-2 orbit-alert-text">
               <AlertCircle className="h-4 w-4" />
-              <p className="text-sm">{csvFileError}</p>
+              <p className="text-xs">{csvFileError}</p>
             </div>
           )}
         </div>
@@ -522,12 +522,12 @@ export default function Step2({
                   ) : importResult ? (
                     importResult.success ? (
                       <div className="space-y-2">
-                        <div className="flex items-center space-x-2 text-green-500">
+                        <div className="flex items-center space-x-2 text-[#2ecc71]">
                           <CircleCheck className="h-4 w-4" />
                           <span className="text-sm">Successfully imported {importResult.count} addresses.</span>
                         </div>
                         {importResult.rejected > 0 && (
-                          <div className="flex items-center space-x-2 text-yellow-500">
+                          <div className="flex items-center space-x-2 text-[#00868b]">
                             <CircleAlert className="h-4 w-4" />
                             <span className="text-sm">
                               {importResult.rejected} invalid address
@@ -537,7 +537,7 @@ export default function Step2({
                         )}
                       </div>
                     ) : (
-                      <div className="flex items-center space-x-2 text-red-500">
+                      <div className="flex items-center space-x-2 orbit-alert-text">
                         <CircleAlert className="h-4 w-4" />
                         <span className="text-sm">{importError}</span>
                       </div>

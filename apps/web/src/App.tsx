@@ -53,11 +53,15 @@ function App() {
   }
 
   return (
-    <div
-      className="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat bg-fixed"
-      style={{ backgroundImage: "url('/background.jpg')" }}
-    >
-      <div className="w-full max-w-4xl rounded-lg shadow-xl">
+    <div className="min-h-screen flex items-center justify-center bg-deep-space overflow-hidden relative">
+      {/* Star animation layers - using 4 different layers */}
+      <div className="stars-layer stars-small"></div>
+      <div className="stars-layer stars-medium"></div>
+      <div className="stars-layer stars-large"></div>
+      <div className="stars-layer stars-xlarge"></div>
+      
+      {/* Main content container */}
+      <div className="w-full max-w-4xl z-10">
         <Routes>
           <Route path="/decompress" element={<DecompressPage />} />
           <Route path="/calculator" element={<CostCalculator />} />

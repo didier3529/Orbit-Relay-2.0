@@ -10,6 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Form } from "@/components/ui/form";
 import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
 import { AlertCircle } from "lucide-react";
+import { Header } from "@/components/Header";
 
 interface ResumeAirdropProps {
   db: airdropsender.BrowserDatabase;
@@ -195,11 +196,11 @@ export function ResumeAirdrop({ db, onBackToHome }: ResumeAirdropProps) {
 
   return (
     <main className="flex flex-col items-center justify-top my-12 space-y-12">
-      <img src="/airship-logo.svg" className="max-w-xl" />
+      <Header />
       <Card className="w-full max-w-4xl">
         <CardHeader>
-          <CardTitle className="text-3xl font-bold text-primary">
-            Resume Airdrop
+          <CardTitle className="text-3xl font-bold orbit-text">
+            Resume Distribution
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -262,7 +263,7 @@ export function ResumeAirdrop({ db, onBackToHome }: ResumeAirdropProps) {
                       />
                       {!isAirdropComplete && (
                         <div className="flex justify-center mt-4">
-                          <Button onClick={handleCancel} variant="outline">
+                          <Button onClick={handleCancel} variant="outline" className="text-[#00868b] border-[#00868b] hover:bg-[rgba(0,134,139,0.1)]">
                             Cancel Airdrop
                           </Button>
                         </div>
@@ -294,7 +295,7 @@ export function ResumeAirdrop({ db, onBackToHome }: ResumeAirdropProps) {
             e.preventDefault();
             onBackToHome();
           }}
-          className="text-primary text-white shadow-lg hover:underline"
+          className="text-[#64ffda] hover:text-[#00b4d8] transition-colors duration-300 hover:underline"
         >
           Back to Home
         </a>

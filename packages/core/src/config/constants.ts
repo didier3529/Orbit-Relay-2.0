@@ -28,7 +28,7 @@ export enum CommitmentStatus {
 }
 
 // Constants
-export const databaseFile = "airship.db";
+export const databaseFile = "orbitrelay.db";
 export const TABLE_NAME = "transaction_queue";
 export const SQLITE_MAX_VARIABLE_NUMBER = 999;
 

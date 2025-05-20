@@ -9,6 +9,7 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: ["Outfit", "sans-serif"],
+				orbitron: ["Orbitron", "sans-serif"],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -18,6 +19,9 @@ export default {
 			colors: {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				'deep-space': 'var(--deep-space)',
+				'orbit-from': 'var(--orbit-gradient-from)',
+				'orbit-to': 'var(--orbit-gradient-to)',
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'

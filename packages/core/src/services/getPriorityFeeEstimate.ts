@@ -9,7 +9,7 @@ export async function getPriorityFeeEstimate(url: string, priorityLevel: "Min" |
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           jsonrpc: "2.0",
-          id: "helius-airship",
+          id: "orbitrelay",
           method: "getPriorityFeeEstimate",
           params: [
             {

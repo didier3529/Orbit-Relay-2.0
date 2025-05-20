@@ -20,12 +20,12 @@ interface Step1Props {
 export default function Step1({ form }: Step1Props) {
   return (
     <div className="space-y-6">
-      <Alert variant="default">
-        <AlertTriangle className="h-4 w-4" />
-        <AlertTitle>Important Security Information</AlertTitle>
-        <AlertDescription>
+      <Alert variant="default" className="orbit-security-info">
+        <AlertTriangle className="h-4 w-4 text-[#64ffda]" />
+        <AlertTitle className="orbit-security-title">Important Security Information</AlertTitle>
+        <AlertDescription className="orbit-security-text">
           <p className="mb-2">
-            AirShip requires a private key to sign transactions and pay for
+            OrbitRelay requires a private key to sign transactions and pay for
             fees. This approach is currently necessary, as other methods aren't
             yet optimized to sign and send large volumes of transactions.
             However, it comes with security risks:
@@ -40,18 +40,6 @@ export default function Step1({ form }: Step1Props) {
               wallet.
             </li>
           </ul>
-          <p className="mb-2">
-            For enhanced security, consider using our{" "}
-            <a
-              href="https://github.com/helius-labs/airship/tree/main/packages/cli"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline hover:text-primary/90"
-            >
-              CLI tool
-            </a>{" "}
-            instead.
-          </p>
           <FormField
             control={form.control}
             name="acknowledgedRisks"
@@ -62,6 +50,7 @@ export default function Step1({ form }: Step1Props) {
                     <Checkbox
                       checked={field.value}
                       onCheckedChange={field.onChange}
+                      className="border-[#64ffda] data-[state=checked]:bg-[#00b4d8]"
                     />
                   </FormControl>
                   <FormLabel className="text-sm font-medium">
@@ -117,6 +106,7 @@ export default function Step1({ form }: Step1Props) {
                   <Checkbox
                     checked={field.value}
                     onCheckedChange={field.onChange}
+                    className="border-[#64ffda] data-[state=checked]:bg-[#00b4d8]"
                   />
                 </FormControl>
                 <div className="space-y-1 leading-none">

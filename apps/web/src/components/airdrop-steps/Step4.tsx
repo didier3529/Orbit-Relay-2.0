@@ -66,7 +66,7 @@ export default function Step4({ form, tokens, recipientList, amountValue }: Step
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             jsonrpc: '2.0',
-            id: 'helius-airship',
+            id: 'orbitrelay',
             method: 'getPriorityFeeEstimate',
             params: [
               {

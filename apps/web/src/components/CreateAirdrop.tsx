@@ -344,12 +344,12 @@ export function CreateAirdrop({ db, onBackToHome }: CreateAirdropProps) {
       <Header />
       <Card className="w-full max-w-4xl">
         <CardHeader>
-          <CardTitle className="text-3xl font-bold text-primary">
+          <CardTitle className="text-3xl font-bold orbit-text">
             {isCreatingAirdrop
-              ? 'Creating Airdrop'
+              ? 'Creating Distribution'
               : isAirdropInProgress || isAirdropComplete
-                ? 'Sending Airdrop'
-                : 'Create New Airdrop'}
+                ? 'Sending Distribution'
+                : 'Create New Distribution'}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -370,8 +370,8 @@ export function CreateAirdrop({ db, onBackToHome }: CreateAirdropProps) {
             <>
               <Alert variant="default" className="mb-6">
                 <AlertCircle className="h-4 w-4" />
-                <AlertTitle>Airdrop Canceled</AlertTitle>
-                <AlertDescription>The airdrop has been canceled.</AlertDescription>
+                <AlertTitle>Distribution Canceled</AlertTitle>
+                <AlertDescription>The distribution has been canceled.</AlertDescription>
               </Alert>
               <div className="flex justify-center">
                 <Button onClick={onBackToHome} className="mt-1">
@@ -382,7 +382,7 @@ export function CreateAirdrop({ db, onBackToHome }: CreateAirdropProps) {
           ) : isCreatingAirdrop ? (
             <div className="flex flex-col items-center justify-center space-y-4">
               <Loader2 className="h-12 w-12 animate-spin" />
-              <p>Creating airdrop... Please wait.</p>
+              <p>Creating distribution... Please wait.</p>
             </div>
           ) : (
             <Form {...form}>
@@ -454,8 +454,8 @@ export function CreateAirdrop({ db, onBackToHome }: CreateAirdropProps) {
                       />
                       {!isAirdropComplete && (
                         <div className="flex justify-center mt-4">
-                          <Button onClick={handleCancel} variant="outline">
-                            Cancel Airdrop
+                          <Button onClick={handleCancel} variant="outline" className="text-[#00868b] border-[#00868b] hover:bg-[rgba(0,134,139,0.1)]">
+                            Cancel Distribution
                           </Button>
                         </div>
                       )}
@@ -473,7 +473,9 @@ export function CreateAirdrop({ db, onBackToHome }: CreateAirdropProps) {
                         Previous
                       </Button>
                     )}
-                    <Button type="submit">{step < 4 ? 'Next' : 'Send'}</Button>
+                    <Button type="submit">
+                      {step < 4 ? 'Next' : 'Send'}
+                    </Button>
                   </div>
                 )}
               </form>
@@ -488,7 +490,7 @@ export function CreateAirdrop({ db, onBackToHome }: CreateAirdropProps) {
             e.preventDefault()
             onBackToHome()
           }}
-          className="text-primary text-white shadow-lg hover:underline"
+          className="text-[#64ffda] hover:text-[#00b4d8] transition-colors duration-300 hover:underline"
         >
           Back to Home
         </a>
@@ -496,14 +498,14 @@ export function CreateAirdrop({ db, onBackToHome }: CreateAirdropProps) {
       <Dialog open={showConfirmDialog} onOpenChange={setShowConfirmDialog}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Confirm Airdrop</DialogTitle>
-            <DialogDescription>Are you sure you want to send this airdrop?</DialogDescription>
+            <DialogTitle>Confirm Distribution</DialogTitle>
+            <DialogDescription>Are you sure you want to send this distribution?</DialogDescription>
           </DialogHeader>
           <DialogFooter>
             <Button variant="outline" onClick={() => setShowConfirmDialog(false)}>
               Cancel
             </Button>
-            <Button onClick={handleSendAirdrop}>Send Airdrop</Button>
+            <Button onClick={handleSendAirdrop}>Send Distribution</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
