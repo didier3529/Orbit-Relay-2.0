@@ -1,17 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 interface AccordionProps {
   children: React.ReactNode;
-  type?: "single" | "multiple";
-  collapsible?: boolean;
   className?: string;
 }
 
 export function Accordion({ 
   children, 
-  type = "single", 
-  collapsible = true, 
   className = "" 
 }: AccordionProps) {
   return (
@@ -23,13 +19,12 @@ export function Accordion({
 
 interface AccordionItemProps {
   children: React.ReactNode;
-  value: string;
+  value?: string; // Changed to optional since it's not used internally
   className?: string;
 }
 
 export function AccordionItem({ 
   children, 
-  value, 
   className = "" 
 }: AccordionItemProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +35,8 @@ export function AccordionItem({
     >
       {React.Children.map(children, child => {
         if (React.isValidElement(child)) {
-          return React.cloneElement(child, { 
+          // Using type assertion to fix TypeScript error
+          return React.cloneElement(child as React.ReactElement<any>, { 
             isOpen, 
             onToggle: () => setIsOpen(!isOpen)
           });

@@ -1,9 +1,8 @@
-import React from "react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "../ui/Accordion";
 
 export function FAQPanel() {
   return (
-    <Accordion type="single" collapsible className="space-y-3">
+    <Accordion className="space-y-3">
       <AccordionItem value="item-1">
         <AccordionTrigger>
           Which wallets are compatible with Orbit Relay?

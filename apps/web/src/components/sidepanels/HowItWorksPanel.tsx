@@ -1,5 +1,3 @@
-import React from "react";
-
 export function HowItWorksPanel() {
   return (
     <div className="space-y-6">
