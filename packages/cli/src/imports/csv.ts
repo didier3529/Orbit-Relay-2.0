@@ -1,11 +1,14 @@
 import chalk from "chalk";
 import ora from "ora";
 import {
+  parseCSV,
+  isSolanaAddress,
+  isFungibleToken,
   AirdropError,
   AirdropErrorCode,
   csvToPublicKeys,
   logger,
-} from "helius-airship-core";
+} from "core";
 import fs from "fs-extra";
 import fileSelector from "inquirer-file-selector";
 import { PublicKey } from "@solana/web3.js";

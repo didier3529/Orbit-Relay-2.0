@@ -4,8 +4,8 @@ import {
   getCollectionHolders,
   isNFTCollection,
   isSolanaAddress,
-  logger,
-} from "helius-airship-core";
+  AirdropError,
+} from "core";
 import { PublicKey } from "@solana/web3.js";
 import { input } from "@inquirer/prompts";
 import * as web3 from "@solana/web3.js";
@@ -53,7 +53,6 @@ export async function nft(url: string): Promise<PublicKey[]> {
     return addresses;
   } catch (error) {
     spinner.fail(`Failed to fetch holders: ${error}`);
-    logger.error(`Failed to fetch holders: ${error}`);
     process.exit(0);
   }
 }

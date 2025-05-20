@@ -20,9 +20,9 @@ import { RadioGroup, RadioGroupItem } from '../ui/radio-group'
 import { Input } from '../ui/input'
 import { Button } from '../ui/button'
 import CodeMirror from '@uiw/react-codemirror'
-import { isFungibleToken, isNFTCollection, isSolanaAddress, normalizeTokenAmount, Token } from 'helius-airship-core'
+import { isFungibleToken, isNFTCollection, isSolanaAddress, normalizeTokenAmount, Token } from 'core'
 import { useDropzone } from 'react-dropzone'
-import { getCollectionHolders, getTokenAccounts, saga2PreOrderTokenMintAddress } from 'helius-airship-core'
+import { getCollectionHolders, getTokenAccounts, saga2PreOrderTokenMintAddress } from 'core'
 import { PublicKey } from '@solana/web3.js'
 import {
   Dialog,

@@ -6,12 +6,12 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import {
   baseFee,
   compressionFee,
-  computeUnitLimit,
-  computeUnitPrice,
-  MICRO_LAMPORTS_PER_LAMPORT,
   maxAddressesPerTransaction,
+  computeUnitPrice,
+  computeUnitLimit,
+  MICRO_LAMPORTS_PER_LAMPORT,
   sampleTransaction,
-} from 'helius-airship-core'
+} from 'core'
 import { Header } from './Header'
 import { Button } from './ui/button'
 import { Globe2, Smartphone } from 'lucide-react'

@@ -4,7 +4,8 @@ import {
   getTokenAccounts,
   logger,
   saga2PreOrderTokenMintAddress,
-} from "helius-airship-core";
+  AirdropError,
+} from "core";
 import { PublicKey } from "@solana/web3.js";
 
 export async function chapter2(url: string): Promise<PublicKey[]> {

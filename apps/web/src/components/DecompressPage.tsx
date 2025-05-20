@@ -5,7 +5,7 @@ import { WalletMultiButton } from './ui/wallet-multi-button'
 import { bn, buildTx, createRpc, pickRandomTreeAndQueue, Rpc, sendAndConfirmTx } from '@lightprotocol/stateless.js'
 import { CompressedTokenProgram, selectMinCompressedTokenAccountsForTransfer } from '@lightprotocol/compressed-token'
 import { Button } from './ui/button'
-import { computeUnitPrice, getPriorityFeeEstimate } from 'helius-airship-core'
+import { computeUnitPrice, getPriorityFeeEstimate } from 'core'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table'
 import { WalletNotConnectedError } from '@solana/wallet-adapter-base'
 import {
@@ -30,7 +30,7 @@ import { Header } from './Header'
 import { BN } from '@coral-xyz/anchor'
 import { ColumnDef, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table'
 import { HelpCircle } from 'lucide-react'
-import { normalizeTokenAmount } from 'helius-airship-core'
+import { normalizeTokenAmount } from 'core'
 import { Checkbox } from './ui/checkbox'
 
 enum DialogState {

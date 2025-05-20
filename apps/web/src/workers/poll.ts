@@ -1,7 +1,7 @@
-import * as airdropsender from "helius-airship-core";
+import * as airdropsender from "core";
 import { SQLocalDrizzle } from "sqlocal/drizzle";
 import { drizzle } from "drizzle-orm/sqlite-proxy";
-import { databaseFile } from "helius-airship-core";
+import { databaseFile } from "core";
 import { configureDatabase } from "@/lib/utils";
 
 const { driver, batchDriver } = new SQLocalDrizzle({

@@ -1,8 +1,8 @@
-import * as airdropsender from "helius-airship-core";
-import * as web3 from "@solana/web3.js";
+import * as airdropsender from "core";
 import { SQLocalDrizzle } from "sqlocal/drizzle";
 import { drizzle } from "drizzle-orm/sqlite-proxy";
-import { databaseFile } from "helius-airship-core";
+import { databaseFile } from "core";
+import { PublicKey } from "@solana/web3.js";
 import { configureDatabase } from "@/lib/utils";
 
 const { driver, batchDriver } = new SQLocalDrizzle({
@@ -20,12 +20,14 @@ export async function create(
 ) {
   await configureDatabase(db);
 
-  await airdropsender.create({
-    db,
-    signer: new web3.PublicKey(signer),
-    addresses: addresses.map((address) => new web3.PublicKey(address)),
-    amount,
-    mintAddress: new web3.PublicKey(mintAddress),
-  });
+  if (addresses.length > 0) {
+    await airdropsender.create({
+      db,
+      signer: new PublicKey(signer),
+      addresses: addresses.map((address) => new PublicKey(address)),
+      amount,
+      mintAddress: new PublicKey(mintAddress),
+    });
+  }
 }
 

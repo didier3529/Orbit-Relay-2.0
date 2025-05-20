@@ -1,6 +1,6 @@
-# Helius AirShip CLI
+# Orbit Relay CLI
 
-**Helius AirShip CLI** is a command-line tool that makes token airdrops simple, affordable, and accessible. Whether you're distributing to Saga Chapter 2 holders, NFT/cNFT holders, SPL token holders, or using a CSV file, Helius AirShip CLI streamlines the process and cuts costs.
+**Orbit Relay CLI** is a command-line tool that makes token airdrops simple, affordable, and accessible. Whether you're distributing to Saga Chapter 2 holders, NFT/cNFT holders, SPL token holders, or using a CSV file, Orbit Relay CLI streamlines the process and cuts costs.
 
 ## Features
 
@@ -18,18 +18,18 @@
 ### Using npm
 
 ```bash
-npm install -g helius-airship
+npm install -g orbit-relay-cli
 ```
 
 ### Build from source using pnpm
 
 ```bash
-git clone https://github.com/helius-labs/airship.git
-cd airship
+git clone https://github.com/didier3529/Orbit-Relay-2.0.git
+cd Orbit-Relay-2.0
 pnpm install && pnpm build
 cd packages/cli
 pnpm link --global
-helius-airship --help
+orbit-relay --help
 ```
 
 ## Example
@@ -37,7 +37,7 @@ helius-airship --help
 To perform an airdrop, use the following command and follow the steps:
 
 ```bash
-helius-airship --keypair /path/to/your/airdrop_wallet.json --url "https://mainnet.helius-rpc.com/?api-key=<YOUR_API_KEY>"
+orbit-relay --keypair /path/to/your/airdrop_wallet.json --url "https://mainnet.helius-rpc.com/?api-key=<YOUR_API_KEY>"
 ```
 
 Replace `/path/to/your/airdrop_wallet.json` with the path to your Solana filesystem wallet that holds the token you wish to distribute and some SOL to pay for the transaction fees. Replace `https://mainnet.helius-rpc.com/?api-key=<YOUR_API_KEY>` with your RPC URL and API key.

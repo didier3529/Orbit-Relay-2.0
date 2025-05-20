@@ -1,7 +1,7 @@
-import * as airdropsender from 'helius-airship-core'
+import * as airdropsender from 'core'
 import { useState, useEffect, useCallback } from 'react'
-import type { Token } from 'helius-airship-core'
-import { getTokensByOwner } from 'helius-airship-core'
+import type { Token } from 'core'
+import { getTokensByOwner } from 'core'
 import { PublicKey } from '@solana/web3.js'
 import { Button } from '../components/ui/button'
 import {

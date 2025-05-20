@@ -9,7 +9,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 import { useState, useEffect } from 'react'
-import { databaseFile } from 'helius-airship-core'
+import { databaseFile } from 'core'
 import { SQLocalDrizzle } from 'sqlocal/drizzle'
 import { useNavigate, Link } from 'react-router-dom'
 import { Footer } from './Footer'

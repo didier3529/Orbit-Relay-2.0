@@ -2,10 +2,12 @@ import chalk from "chalk";
 import ora from "ora";
 import {
   getTokenAccounts,
+  getTokenMetadata,
   isFungibleToken,
   isSolanaAddress,
   logger,
-} from "helius-airship-core";
+  AirdropError,
+} from "core";
 import { input } from "@inquirer/prompts";
 import * as web3 from "@solana/web3.js";
 import { PublicKey } from "@solana/web3.js";
