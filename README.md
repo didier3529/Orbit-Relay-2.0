@@ -1,6 +1,6 @@
-# Helius AirShip
+# Orbit Relay
 
-Helius AirShip is an open-source tool that makes token airdrops simple, affordable, and accessible. Whether you're distributing to Saga Chapter 2 holders, NFT/cNFT holders, SPL token holders, or using a CSV file, Helius AirShip streamlines the process and cuts costs.
+Orbit Relay is an open-source tool that makes token airdrops simple, affordable, and accessible. Whether you're distributing to Saga Chapter 2 holders, NFT/cNFT holders, SPL token holders, or using a CSV file, Orbit Relay streamlines the process and cuts costs.
 
 ## Features
 
@@ -15,15 +15,11 @@ Helius AirShip is an open-source tool that makes token airdrops simple, affordab
 
 - RPC that supports both ZK Compression and the DAS API. If you don't have one, you can get one for free at https://www.helius.dev
 
-### Public Web Version
-
-You can find public web version of Helius AirShip [here](https://airship.helius.dev).
-
 ### Run locally from source
 
 ```bash
-git clone https://github.com/helius-labs/airship.git
-cd airship
+git clone https://github.com/didier3529/Orbit-Relay-2.0.git
+cd Orbit-Relay-2.0
 pnpm install
 pnpm build
 cd apps/web
@@ -42,21 +38,15 @@ Open http://localhost:4173/
 
 ### Installation
 
-#### Using npm
-
-```bash
-npm install -g helius-airship
-```
-
 #### Build from source using pnpm
 
 ```bash
-git clone https://github.com/helius-labs/airship.git
-cd airship
+git clone https://github.com/didier3529/Orbit-Relay-2.0.git
+cd Orbit-Relay-2.0
 pnpm install && pnpm build
 cd packages/cli
 pnpm link --global
-helius-airship --help
+orbit-relay --help
 ```
 
 ### Example
@@ -64,7 +54,7 @@ helius-airship --help
 To perform an airdrop, use the following command and follow the steps:
 
 ```bash
-helius-airship --keypair /path/to/your/airdrop_wallet.json --url "https://mainnet.helius-rpc.com/?api-key=<YOUR_API_KEY>"
+orbit-relay --keypair /path/to/your/airdrop_wallet.json --url "https://mainnet.helius-rpc.com/?api-key=<YOUR_API_KEY>"
 ```
 
 Replace `/path/to/your/airdrop_wallet.json` with the path to your Solana filesystem wallet that holds the token you wish to distribute and some SOL to pay for the transaction fees. Replace `https://mainnet.helius-rpc.com/?api-key=<YOUR_API_KEY>` with your RPC URL and API key.

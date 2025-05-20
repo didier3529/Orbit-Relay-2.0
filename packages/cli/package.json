@@ -1,7 +1,7 @@
 {
-  "name": "helius-airship",
+  "name": "orbit-relay-cli",
   "version": "0.9.4",
-  "description": "Helius AirShip is an open-source tool that simplifies and reduces the cost of Solana token airdrops",
+  "description": "Orbit Relay is an open-source tool that simplifies and reduces the cost of Solana token airdrops",
   "publishConfig": {
     "access": "public"
   },
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/helius-labs/airship.git",
+    "url": "https://github.com/didier3529/Orbit-Relay-2.0.git",
     "directory": "packages/cli"
   },
   "type": "module",
@@ -22,7 +22,7 @@
     "typecheck": "tsc --noEmit"
   },
   "bin": {
-    "helius-airship": "./dist/index.js"
+    "orbit-relay": "./dist/index.js"
   },
   "dependencies": {
     "@inquirer/prompts": "^5.3.8",
@@ -36,11 +36,11 @@
     "commander": "^12.1.0",
     "drizzle-orm": "^0.33.0",
     "fs-extra": "^11.2.0",
-    "helius-airship-core": "workspace:*",
     "inquirer-file-selector": "^0.4.0",
     "ora": "^8.0.1",
     "path": "^0.12.7",
-    "tinypool": "^1.0.1"
+    "tinypool": "^1.0.1",
+    "core": "workspace:*"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

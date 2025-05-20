@@ -1,8 +1,8 @@
 {
-  "name": "helius-airship-core",
+  "name": "core",
   "type": "module",
   "version": "0.6.1",
-  "description": "Helius AirShip core library",
+  "description": "Orbit Relay core library",
   "license": "Apache-2.0",
   "author": {
     "name": "Helius",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/helius/airdrop.git",
+    "url": "https://github.com/didier3529/Orbit-Relay-2.0.git",
     "directory": "packages/core"
   },
   "files": [

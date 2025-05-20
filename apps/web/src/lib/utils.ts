@@ -2,7 +2,7 @@ import { Keypair, Connection, PublicKey } from "@solana/web3.js";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import bs58 from "bs58";
-import { BrowserDatabase } from "helius-airship-core";
+import { BrowserDatabase } from "core";
 import { sql } from "drizzle-orm";
 
 export function cn(...inputs: ClassValue[]) {
