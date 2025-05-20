@@ -105,12 +105,12 @@ importers:
       comlink:
         specifier: ^4.4.1
         version: 4.4.1
+      core:
+        specifier: workspace:*
+        version: link:../../packages/core
       drizzle-orm:
         specifier: ^0.33.0
         version: 0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.5)(@types/sql.js@1.4.9)(better-sqlite3@11.2.1)(react@18.3.1)(sql.js@1.11.0)
-      helius-airship-core:
-        specifier: workspace:*
-        version: link:../../packages/core
       lucide-react:
         specifier: ^0.424.0
         version: 0.424.0(react@18.3.1)
@@ -232,15 +232,15 @@ importers:
       commander:
         specifier: ^12.1.0
         version: 12.1.0
+      core:
+        specifier: workspace:*
+        version: link:../core
       drizzle-orm:
         specifier: ^0.33.0
         version: 0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.5)(@types/sql.js@1.4.9)(better-sqlite3@11.2.1)(react@18.3.1)(sql.js@1.11.0)
       fs-extra:
         specifier: ^11.2.0
         version: 11.2.0
-      helius-airship-core:
-        specifier: workspace:*
-        version: link:../core
       inquirer-file-selector:
         specifier: ^0.4.0
         version: 0.4.0
