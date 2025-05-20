@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 interface AccordionProps {
@@ -19,7 +19,7 @@ export function Accordion({
 
 interface AccordionItemProps {
   children: React.ReactNode;
-  value?: string; // Changed to optional since it's not used internally
+  value?: string;
   className?: string;
 }
 
@@ -35,7 +35,6 @@ export function AccordionItem({
     >
       {React.Children.map(children, child => {
         if (React.isValidElement(child)) {
-          // Using type assertion to fix TypeScript error
           return React.cloneElement(child as React.ReactElement<any>, { 
             isOpen, 
             onToggle: () => setIsOpen(!isOpen)
