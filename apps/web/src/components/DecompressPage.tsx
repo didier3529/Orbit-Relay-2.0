@@ -25,7 +25,6 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from './ui/alert-dialog'
-import { Link } from 'react-router-dom'
 import { Header } from './Header'
 import { BN } from '@coral-xyz/anchor'
 import { ColumnDef, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table'
@@ -234,7 +233,7 @@ export function DecompressPage() {
             symbol: asset.content?.metadata?.symbol || '',
             decimals: asset.token_info?.decimals || 0,
             image: asset.content?.links?.image || '',
-            pricePerToken: asset.token_info?.price_info?.price_per_token || 0,
+            pricePerToken: asset.token_info?.price_info?.price_per_token ||, 0,
             tokenProgramId:
               asset.token_info?.token_program === TOKEN_PROGRAM_ID.toBase58()
                 ? TOKEN_PROGRAM_ID
