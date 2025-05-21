@@ -90,14 +90,6 @@ function App() {
     setActiveSidePanel(null)
   }
 
-  const handlePanelOpen = (panelName: string) => {
-    setActiveSidePanel(panelName)
-  }
-
-  const handlePanelClose = () => {
-    setActiveSidePanel(null)
-  }
-
   // Close side panels if ESC key is pressed
   useEffect(() => {
     const handleEscKey = (event: KeyboardEvent) => {
