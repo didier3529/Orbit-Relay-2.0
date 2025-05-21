@@ -1,0 +1,17 @@
+{
+  "short_name": "OrbitRelay",
+  "name": "OrbitRelay | Token Distribution",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "theme_color": "#000000",
+  "background_color": "#000000"
+}
