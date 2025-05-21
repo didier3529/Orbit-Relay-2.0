@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { ChevronRight, ChevronLeft } from "lucide-react";
+import { ChevronRight, ChevronLeft, X } from "lucide-react";
 
 interface SideDropdownProps {
   title: string;
@@ -11,10 +11,14 @@ interface SideDropdownProps {
 export function SideDropdown({ title, children, position, className = "" }: SideDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   // Handle mouse enter/leave events
   const handleMouseEnter = () => setIsOpen(true);
   const handleMouseLeave = () => setIsOpen(false);
+
+  // Toggle dropdown
+  const toggleDropdown = () => setIsOpen(!isOpen);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -30,17 +34,23 @@ export function SideDropdown({ title, children, position, className = "" }: Side
     };
   }, []);
 
+  // Reset scroll position when opening/closing
+  useEffect(() => {
+    if (contentRef.current) {
+      contentRef.current.scrollTop = 0;
+    }
+  }, [isOpen]);
+
   return (
     <div
       ref={dropdownRef}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className={`fixed ${position === "left" ? "left-0" : "right-0"} top-1/4 z-50 ${className}`}
+      className={`fixed ${position === "left" ? "left-0" : "right-0"} top-1/4 z-30 ${className}`}
     >
       {/* Trigger button */}
       <div className="relative">
         {/* Button */}
         <div
+          onClick={toggleDropdown}
           className={`relative flex items-center justify-center ${
             position === "left" ? "rounded-r-lg" : "rounded-l-lg"
           } bg-[#1c1c2a] border border-[#3a3a5a] hover:border-[#64ffda] transition-all duration-300 
@@ -55,14 +65,14 @@ export function SideDropdown({ title, children, position, className = "" }: Side
             {position === "left" ? (
               <ChevronRight
                 className={`w-6 h-6 text-[#64ffda] transition-all duration-300 group-hover:text-white group-hover:translate-x-1 ${
-                  isOpen ? "rotate-180" : ""
-                }`}
+                    isOpen ? "rotate-180" : ""
+                  }`}
               />
             ) : (
               <ChevronLeft
                 className={`w-6 h-6 text-[#64ffda] transition-all duration-300 group-hover:text-white group-hover:-translate-x-1 ${
-                  isOpen ? "rotate-180" : ""
-                }`}
+                    isOpen ? "rotate-180" : ""
+                  }`}
               />
             )}
           </div>
@@ -71,27 +81,32 @@ export function SideDropdown({ title, children, position, className = "" }: Side
 
       {/* Dropdown content */}
       <div
-        className={`absolute top-0 ${
+        className={`fixed top-0 ${
           position === "left" ? "left-0" : "right-0"
-        } w-96 md:w-[450px] bg-[#1c1c2a] border border-[#3a3a5a] rounded-lg p-6 
-        shadow-lg transition-all duration-300 transform ${
+        } w-96 md:w-[450px] h-screen bg-[#1c1c2a] border border-[#3a3a5a] rounded-lg 
+        shadow-xl transition-all duration-300 transform ${
           isOpen
             ? "translate-x-0 opacity-100 border-[#64ffda]"
             : position === "left"
-              ? "-translate-x-full opacity-0"
-              : "translate-x-full opacity-0"
+              ? "-translate-x-full opacity-0 pointer-events-none"
+              : "translate-x-full opacity-0 pointer-events-none"
         }`}
       >
-        <div className="flex justify-between items-center mb-6">
+        <div className="sticky top-0 z-10 flex justify-between items-center p-6 bg-[#1c1c2a] border-b border-[#3a3a5a]">
           <h2 className="text-2xl font-bold text-[#64ffda] tracking-wider uppercase font-['Orbitron']">{title}</h2>
           <button
             onClick={() => setIsOpen(false)}
             className="text-gray-400 hover:text-[#64ffda] transition-colors p-2 rounded-full hover:bg-[#0f0f1a]/50"
           >
-            {position === "left" ? <ChevronLeft className="w-5 h-5" /> : <ChevronRight className="w-5 h-5" />}
+            <X className="w-5 h-5" />
           </button>
         </div>
-        <div className="overflow-y-auto max-h-[70vh] pr-2">{children}</div>
+        <div 
+          ref={contentRef}
+          className="overflow-y-auto h-[calc(100vh-88px)] p-6"
+        >
+          {children}
+        </div>
       </div>
     </div>
   );
