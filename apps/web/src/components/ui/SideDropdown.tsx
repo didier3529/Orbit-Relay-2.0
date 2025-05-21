@@ -13,10 +13,6 @@ export function SideDropdown({ title, children, position, className = "" }: Side
   const dropdownRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  // Handle mouse enter/leave events
-  const handleMouseEnter = () => setIsOpen(true);
-  const handleMouseLeave = () => setIsOpen(false);
-
   // Toggle dropdown
   const toggleDropdown = () => setIsOpen(!isOpen);
 
