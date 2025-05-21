@@ -197,26 +197,7 @@ function App() {
         </>
       )}
 
-      {/* Twitter/X button - fixed at bottom but with proper z-index */}
-      <a 
-        href="https://twitter.com/orbitrelay" 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className={`fixed bottom-8 left-1/2 transform -translate-x-1/2 z-20 
-                   flex items-center justify-center w-12 h-12 rounded-full 
-                   bg-black border border-gray-700 hover:border-[#64ffda] 
-                   transition-all duration-300 ${mobileMenuOpen ? 'hidden' : 'block'}`}
-        aria-label="Follow us on Twitter/X"
-      >
-        <svg 
-          className="w-5 h-5 text-white" 
-          aria-hidden="true" 
-          fill="currentColor" 
-          viewBox="0 0 24 24"
-        >
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-        </svg>
-      </a>
+      {/* Removed duplicate Twitter/X button that was here */}
     </div>
   )
 }
