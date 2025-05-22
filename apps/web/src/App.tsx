@@ -104,7 +104,7 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen flex flex-col md:items-center md:justify-center bg-deep-space overflow-hidden relative">
+    <div className="min-h-screen flex flex-col md:flex-row bg-deep-space overflow-hidden relative">
       {/* Star animation layers - using 4 different layers */}
       <div className="stars-layer stars-small"></div>
       <div className="stars-layer stars-medium"></div>
@@ -147,10 +147,23 @@ function App() {
         </div>
       )}
       
-      {/* Main content container */}
+      {/* Side Dropdowns for desktop - conditionally render based on activeSidePanel state */}
+      {!isMobile && (
+        <div className="fixed left-0 top-1/4 z-30">
+          <SideDropdown 
+            title="FAQ" 
+            position="left"
+            className={activeSidePanel === 'HowItWorks' ? 'pointer-events-none' : ''}
+          >
+            <FAQPanel />
+          </SideDropdown>
+        </div>
+      )}
+      
+      {/* Main content container - absolutely centered */}
       <div 
         ref={contentRef}
-        className={`w-full max-w-4xl z-10 p-4 md:p-0 flex-1 overflow-auto ${
+        className={`w-full flex-1 z-10 flex flex-col items-center justify-center ${
           mobileMenuOpen ? 'hidden' : 'block'
         }`}
       >
@@ -176,17 +189,9 @@ function App() {
         </Routes>
       </div>
       
-      {/* Side Dropdowns for desktop - conditionally render based on activeSidePanel state */}
+      {/* Side Dropdowns for desktop - right side */}
       {!isMobile && (
-        <>
-          <SideDropdown 
-            title="FAQ" 
-            position="left"
-            className={activeSidePanel === 'HowItWorks' ? 'pointer-events-none' : ''}
-          >
-            <FAQPanel />
-          </SideDropdown>
-          
+        <div className="fixed right-0 top-1/4 z-30">
           <SideDropdown 
             title="How It Works" 
             position="right"
@@ -194,10 +199,8 @@ function App() {
           >
             <HowItWorksPanel />
           </SideDropdown>
-        </>
+        </div>
       )}
-
-      {/* Removed duplicate Twitter/X button that was here */}
     </div>
   )
 }
