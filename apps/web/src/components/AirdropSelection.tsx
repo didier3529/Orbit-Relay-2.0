@@ -171,13 +171,6 @@ export function AirdropSelection({ existingAirdrop, onCreateAirdrop, onResumeAir
         </div>
       )}
       
-      {/* Contract Address */}
-      <div className="mt-8 mb-8 text-center">
-        <p className="text-gray-400 font-sans text-sm">
-          CA: 5fKkZtZEX1peA6WVXYuh2GUGNF96xZLvBRUaTVGpump
-        </p>
-      </div>
-      
       <Footer />
 
       <Dialog open={showDialog} onOpenChange={setShowDialog}>
